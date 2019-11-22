@@ -1,0 +1,1 @@
+"use strict";function createTrophy(a,b,c,d){return{id:a,name:b,imgUrl:c,description:d}}var abilities=Object.freeze({SPEAK:Symbol(),SEE:Symbol(),WAIT:Symbol()}),trophyToAbility={t1:abilities.SPEAK,t2:abilities.SEE,t3:abilities.WAIT},initialState={trophies:[createTrophy("t1","black diamond","img/1.svg","This is a black diamond trophy")]};
