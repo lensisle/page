@@ -1,23 +1,3 @@
-<<<<<<< HEAD
-function createTrophy(id, name, imgUrl, description) {
-    return {
-        id, name, imgUrl, description
-    };
-}
-
-const abilities = Object.freeze({SPEAK: Symbol(), SEE: Symbol(), WAIT: Symbol()});
-const trophyToAbility = {
-    "t1": abilities.SPEAK,
-    "t2": abilities.SEE,
-    "t3": abilities.WAIT
-};
-
-const initialState = {
-    trophies: [
-        createTrophy('t1', 'black diamond', 'img/1.svg', 'This is a black diamond trophy')
-    ]
-};
-=======
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
@@ -57,4 +37,3 @@ ReactDOM.render(<App />, document.getElementById('root'));
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
->>>>>>> Initial commit from Create React App
