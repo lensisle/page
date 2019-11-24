@@ -1,4 +1,3 @@
-import React from "react";
 import t1 from "./img/1.svg";
 import t2 from "./img/2.svg";
 
