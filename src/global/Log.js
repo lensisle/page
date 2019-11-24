@@ -11,7 +11,7 @@ export function Log(props) {
   }
 
   const logList = (
-    <ul>
+    <ul className="max-h-full overflow-hidden">
       {logQueue.map((log, idx) => {
         if (idx === 0) {
           return (
@@ -21,7 +21,11 @@ export function Log(props) {
             </li>
           );
         }
-        return <li key={log.id}>{log.text}</li>;
+        return (
+          <li className="mb-0" key={log.id}>
+            {log.text}
+          </li>
+        );
       })}
     </ul>
   );

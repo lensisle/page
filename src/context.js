@@ -8,6 +8,7 @@ export function AppProvider(props) {
   const [trophies, setTrophies] = useState();
   const [logQueue, setLogQueue] = useState([]);
   const [byteShards, setByteShards] = useState(0);
+  const [unlockedAchievements, setUnlockedAchievements] = useState([]);
 
   const value = {
     step,
@@ -17,7 +18,9 @@ export function AppProvider(props) {
     logQueue,
     setLogQueue,
     byteShards,
-    setByteShards
+    setByteShards,
+    unlockedAchievements,
+    setUnlockedAchievements
   };
 
   return (

@@ -14,9 +14,9 @@ import { GameMenu } from "./global/GameMenu";
 
 export default function App() {
   return (
-    <div className="ml-10 mt-10 flex">
+    <div className="ml-10 flex">
       <AppProvider>
-        <div className="mr-16 w-1/2">
+        <div className="mr-16 w-1/2 max-w-lg">
           <Trophies />
           <IntroScreen />
           <ConnectionGiftScreen />

@@ -22,10 +22,11 @@ export const StepNames = {
 };
 
 export const AchievementsList = [
-  "First Trophy",
+  "First Artifact",
   "Connection stablished",
   "About me",
-  "Teammates"
+  "Teammates",
+  "The Source"
 ];
 
 export const CoolDowns = {

@@ -16,7 +16,7 @@ const ActionButton = props => {
         {percentage === 0 ? props.text : "..."}
       </span>
       <div
-        style={{ left: 0, width: `${percentage}%` }}
+        style={{ width: `${percentage}%` }}
         className="bg-gray-800 absolute top-0 left-0 bottom-0 z-10"
       ></div>
     </button>
@@ -61,15 +61,17 @@ export function Actions(props) {
           initialized: false,
           progress: 0
         });
-        setLogQueue(
-          createLog(
-            logQueue,
-            "A link was opened through the void, nothing but byte shards were retrieved."
-          )
-        );
-        setByteShards(byteShards + 1);
+
+        const bonus = Math.ceil(Math.random() * 100) >= 95 ? 2 : 0;
+        const log =
+          bonus > 0
+            ? "A link was opened through the void, a substantial amount of byte shards were retrieved."
+            : "A link was opened through the void, nothing but byte shards were retrieved.";
+
+        setLogQueue(createLog(logQueue, log));
+        setByteShards(byteShards + 1 + bonus);
       }
-    }, CoolDowns.ByteShards * 10);
+    }, (CoolDowns.ByteShards * 10) / 2);
 
     return () => clearInterval(intervalId);
   }, [connectStatus]);
@@ -85,7 +87,7 @@ export function Actions(props) {
         onClick={gatherByteShard}
         percentage={connectStatus.progress}
       />
-      <ActionButton text="Build" />
+      {/* <ActionButton text="Build" /> */}
     </div>
   );
 }
