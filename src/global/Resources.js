@@ -22,12 +22,13 @@ export function Resources(props) {
   }
 
   return (
-    <div className="mt-10">
+    <div>
       <p>Resources</p>
       {resources.map(resource => (
         <ul key={resource.name}>
           <li>
-            {resource.name} {resource.quantity}
+            <span className="italic">{resource.name}</span>{" "}
+            <span className="text-md font-semibold">{resource.quantity}</span>
           </li>
         </ul>
       ))}

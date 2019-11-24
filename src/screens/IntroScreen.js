@@ -35,9 +35,9 @@ export function IntroScreen(props) {
     <p>
       Hello <span className="font-semibold">visitor</span>, this is my{" "}
       <span className="font-semibold">old self</span> writing.
-      <br /> If <span className="font-semibold">past</span> is immutable, then,
-      an immutable version of <span className="font-hairline">me</span> is
-      stored on this app.
+      <br /> If <span className="font-semibold">past</span> is immutable then an
+      immutable version of <span className="font-hairline">me</span> is stored
+      on this app.
       <br />
       <br />
       Do you want to know more about this?{" "}

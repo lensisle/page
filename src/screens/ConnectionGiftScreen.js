@@ -4,9 +4,14 @@ import { AppContext } from "../context";
 import { StepNames } from "../data";
 
 export function ConnectionGiftScreen(props) {
-  const { step } = useContext(AppContext);
+  const { step, byteShards, setStep } = useContext(AppContext);
 
   if (step !== StepNames.ConnectionGift) {
+    return null;
+  }
+
+  if (byteShards > 8) {
+    setStep(StepNames.UnsuccessfulConnection);
     return null;
   }
 
@@ -20,7 +25,17 @@ export function ConnectionGiftScreen(props) {
         My gift to you is one{" "}
         <span className="font-semibold">connection gate</span>.
       </p>
-      <p>Please enjoy it.</p>
+      <p>
+        A <span className="font-semibold">connection gate</span> enables the
+        ability to communicate here in the void.
+      </p>
+      <p>Enjoy it and try to connect with someone.</p>
+
+      <p className="mt-5 italic text-sm">
+        ps: If you feel lost the{" "}
+        <span className="font-semibold">log section</span> will describe every
+        important action.
+      </p>
     </div>
   );
 }

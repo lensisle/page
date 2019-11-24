@@ -13,9 +13,10 @@ export function FastEndScreen(props) {
   return (
     <div>
       <p className="mb-5">
-        That's fine. You can try to find me any other time.
+        That's fine. You can visit{" "}
+        <span className="font-bold italic">the void</span> any other time.
       </p>
-      <p className="mb-2 underline">About me</p>
+      <p className="mb-2 underline">More about me</p>
       <ul>
         <li>
           <a href="https://www.linkedin.com/in/camvalde/">Linkedin</a>
@@ -31,6 +32,11 @@ export function FastEndScreen(props) {
         </li>
         <li>
           <a href="https://twitter.com/camkida">Twitter</a>
+        </li>
+        <li>
+          <a href="https://store.steampowered.com/app/510540/Long_Gone_Days/">
+            Long Gone Days
+          </a>
         </li>
       </ul>
     </div>

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { AppContext } from "../context";
 
 const Trophy = ({ img, description }) => (
-  <div id="trophies" className="flex mb-10">
+  <div>
     <img
       className="h-8 mr-6"
       src={img}
@@ -20,7 +20,7 @@ export function Trophies() {
   }
 
   return (
-    <div className="flex mb-10">
+    <div className="flex mb-0 mb-10">
       {trophies.map(trophy => (
         <Trophy
           key={trophy.id}
