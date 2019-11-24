@@ -21,11 +21,19 @@ export const StepNames = {
   FastEnd: Symbol()
 };
 
-Object.freeze(StepNames);
-
 export const AchievementsList = [
   "First Trophy",
   "Connection stablished",
   "About me",
   "Teammates"
 ];
+
+export const CoolDowns = {
+  ByteShards: 3
+};
+
+export const ResourcesData = {
+  ByteShards: {
+    name: "Byte Shards"
+  }
+};

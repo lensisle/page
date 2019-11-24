@@ -10,6 +10,7 @@ import { FastEndScreen } from "./screens/FastEndScreen";
 import { ConnectionGiftScreen } from "./screens/ConnectionGiftScreen";
 import { Achievements } from "./global/Achievements";
 import { Log } from "./global/Log";
+import { GameMenu } from "./global/GameMenu";
 
 export default function App() {
   return (
@@ -21,7 +22,10 @@ export default function App() {
           <ConnectionGiftScreen />
           <FastEndScreen />
           <Resources />
-          <Log />
+          <div className="w-full mt-10 flex">
+            <Log />
+            <GameMenu />
+          </div>
         </div>
         <div className="bg-gray-200 h-screen">
           <Actions />

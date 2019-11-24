@@ -1,12 +1,17 @@
 import React, { useContext } from "react";
 
-import { StepNames } from "../data";
+import { StepNames, ResourcesData } from "../data";
 import { AppContext } from "../context";
 
 export function Resources(props) {
-  const { step } = useContext(AppContext);
+  const { step, byteShards } = useContext(AppContext);
 
-  const resources = [];
+  const resources = [
+    {
+      name: ResourcesData.ByteShards.name,
+      quantity: byteShards
+    }
+  ];
 
   if (
     step === StepNames.Introduction ||
@@ -17,10 +22,10 @@ export function Resources(props) {
   }
 
   return (
-    <div className="mt-10 text-xs">
+    <div className="mt-10">
       <p>Resources</p>
       {resources.map(resource => (
-        <ul key={resource.id}>
+        <ul key={resource.name}>
           <li>
             {resource.name} {resource.quantity}
           </li>

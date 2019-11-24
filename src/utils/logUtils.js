@@ -3,10 +3,10 @@ import { v4 } from "uuid";
 export function createLog(logQueue, text) {
   const newQueue = [...logQueue];
   if (newQueue.length > 9) {
-    newQueue.shift();
+    newQueue.pop();
   }
 
-  newQueue.push({
+  newQueue.unshift({
     id: v4(),
     text
   });

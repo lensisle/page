@@ -4,21 +4,37 @@ import { StepNames } from "../data";
 import { AppContext } from "../context";
 
 export function Log(props) {
-  const { step, logQueue = [] } = useContext(AppContext);
+  const { step, logQueue = [], setLogQueue } = useContext(AppContext);
 
   if (step === StepNames.Introduction) {
     return null;
   }
 
+  const logList = (
+    <ul>
+      {logQueue.map((log, idx) => {
+        if (idx === 0) {
+          return (
+            <li key={log.id} className="bg-gray-300 animatedLog">
+              {log.text}
+              <p className="text-right mr-2 italic">Latest</p>
+            </li>
+          );
+        }
+        return <li key={log.id}>{log.text}</li>;
+      })}
+    </ul>
+  );
+
   return (
-    <div className="mt-10 text-xs">
-      <p>Log</p>
-      {logQueue.length > 0 &&
-        logQueue.map(log => (
-          <ul key={log.id}>
-            <li className="italic">{log.text}</li>
-          </ul>
-        ))}
+    <div className="text-xs w-1/3">
+      <div className="flex">
+        <p className="mr-2">Log</p> |{" "}
+        <button className="mx-2" onClick={() => setLogQueue([])}>
+          Clear
+        </button>
+      </div>
+      {logQueue.length > 0 ? logList : null}
     </div>
   );
 }
