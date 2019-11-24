@@ -16,9 +16,10 @@ export const T2 = {
 };
 
 export const StepNames = {
-  Introduction: Symbol(),
-  ConnectionGift: Symbol(),
-  FastEnd: Symbol()
+  Introduction: 0,
+  ConnectionGift: 1,
+  UnsuccessfulConnection: 2,
+  FastEnd: -1
 };
 
 export const AchievementsList = [
