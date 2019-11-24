@@ -13,10 +13,14 @@ export function ConnectionGiftScreen(props) {
   return (
     <div>
       <p>
-        My gift to you is one{" "}
-        <span className="font-semibold">connection token</span>.
+        Thanks for accepting my proposition, you are now inside the{" "}
+        <span className="font-semibold">the void</span>.
       </p>
-      <p>Please enjoy this present, if you want.</p>
+      <p>
+        My gift to you is one{" "}
+        <span className="font-semibold">connection gate</span>.
+      </p>
+      <p>Please enjoy it.</p>
     </div>
   );
 }
