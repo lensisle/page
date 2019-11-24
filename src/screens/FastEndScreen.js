@@ -12,7 +12,7 @@ export function FastEndScreen(props) {
 
   return (
     <div>
-      <p className="mb-5">That's fine. You can find me here.</p>
+      <p className="mb-5">That's fine. You can find me here any other time.</p>
       <ul>
         <li>
           <a href="https://www.linkedin.com/in/camvalde/">Linkedin</a>

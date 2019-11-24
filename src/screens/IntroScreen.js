@@ -1,20 +1,27 @@
 import React, { useContext } from "react";
 import { StepNames, T1 } from "../data";
 import { AppContext } from "../context";
+import { createLog } from "../utils/logUtils";
 
 export function IntroScreen(props) {
-  const { step, setTrophies, setStep } = useContext(AppContext);
+  const { step, setTrophies, setStep, logQueue, setLogQueue } = useContext(
+    AppContext
+  );
 
   if (step !== StepNames.Introduction) {
     return null;
   }
 
   function goToNext() {
+    const logQueue = createLog([], "You accepted a gift.");
+    setLogQueue(logQueue);
     setTrophies([T1]);
     setStep(StepNames.Connections);
   }
 
   function goToEnd() {
+    const logQueue = createLog([], "You left the void.");
+    setLogQueue(logQueue);
     setStep(StepNames.FastEnd);
   }
 

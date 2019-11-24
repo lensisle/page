@@ -7,6 +7,9 @@ import { Resources } from "./global/Resources";
 import { Actions } from "./global/Actions";
 import { IntroScreen } from "./screens/IntroScreen";
 import { FastEndScreen } from "./screens/FastEndScreen";
+import { ConnectionGiftScreen } from "./screens/ConnectionGiftScreen";
+import { Achievements } from "./global/Achievements";
+import { Log } from "./global/Log";
 
 export default function App() {
   return (
@@ -15,12 +18,15 @@ export default function App() {
         <div className="mr-16 w-1/2">
           <Trophies />
           <IntroScreen />
+          <ConnectionGiftScreen />
           <FastEndScreen />
           <Resources />
+          <Log />
         </div>
         <div className="bg-gray-200 h-screen">
           <Actions />
         </div>
+        <Achievements />
       </AppProvider>
     </div>
   );

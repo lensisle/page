@@ -18,29 +18,8 @@ export const T2 = {
 
 export const StepNames = {
   Introduction: Symbol(),
-  Connections: Symbol(),
+  ConnectionGift: Symbol(),
   FastEnd: Symbol()
 };
 
 Object.freeze(StepNames);
-
-const analysisStep = () => {
-  const Message = ({ setStep }) => (
-    <div>
-      <p>
-        My gift to you is one{" "}
-        <span className="font-semibold">connection token</span>.
-      </p>
-      <p>Please enjoy this present, if you want.</p>
-    </div>
-  );
-
-  const connect = {
-    text: "Send Signal"
-  };
-
-  return {
-    Message,
-    Actions: [connect]
-  };
-};
