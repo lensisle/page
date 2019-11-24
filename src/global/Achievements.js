@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { AppContext } from "../context";
 
-import { StepNames } from "../data";
+import { StepNames, AchievementsList } from "../data";
 
 export function Achievements(props) {
   const { step } = useContext(AppContext);
@@ -14,9 +14,9 @@ export function Achievements(props) {
     <div className="ml-16">
       <p className="mb-4">Achievements</p>
       <ul>
-        <li>Connection stablished [Locked]</li>
-        <li>About me [Locked]</li>
-        <li>Teammates [Locked]</li>
+        {AchievementsList.map((achievement, idx) => (
+          <li key={idx}>{achievement} [Locked]</li>
+        ))}
       </ul>
     </div>
   );

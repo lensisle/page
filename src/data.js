@@ -22,3 +22,10 @@ export const StepNames = {
 };
 
 Object.freeze(StepNames);
+
+export const AchievementsList = [
+  "First Trophy",
+  "Connection stablished",
+  "About me",
+  "Teammates"
+];
