@@ -42,13 +42,11 @@ export function IntroScreen(props) {
       <br />
       <br />
       Once you enter the void an immutable copy of your persona will be stored
-      here and will be updated everytime an important event happens (helpful If
-      you want to continue later).
+      and trapped here.
       <br />
       <br />
-      I don't really know how to escape (that's why I'm still here) and I won't
-      be able to help you if get in trouble, please take a moment to decide what
-      you want to do.
+      I don't really know how to escape and I won't be able to help you if get
+      in trouble, please take a moment to decide what you want to do.
       <br />
       <br />
       You can explore the void now or just go to my social network links and
