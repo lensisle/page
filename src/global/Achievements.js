@@ -15,9 +15,9 @@ export function Achievements(props) {
       <p className="mb-4">Achievements</p>
       <ul>
         {AchievementsList.map((achievement, idx) => (
-          <li key={idx}>
-            {achievement}{" "}
-            {unlockedAchievements.includes(achievement) ? "[✓]" : "[Locked]"}
+          <li key={idx} className="text-sm">
+            <span className="italic">{achievement}</span>
+            {unlockedAchievements.includes(achievement) ? " [✓]" : " [Locked]"}
           </li>
         ))}
       </ul>
