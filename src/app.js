@@ -34,7 +34,7 @@ export default function App() {
               <GameMenu />
             </div>
           </div>
-          <div className="bg-gray-200 h-screen">
+          <div className="h-screen">
             <Actions>
               <ConnectAction />
             </Actions>

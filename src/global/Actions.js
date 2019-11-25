@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, useRef } from "react";
 
 import { AppContext } from "../context";
 import { StepNames, CoolDowns } from "../data";
@@ -8,7 +8,8 @@ import { BYTE_SHARDS_NORMAL, BYTE_SHARDS_HIGH } from "./Strings";
 const ProgressButton = props => {
   const { percentage = 0, onClick } = props;
 
-  const bgColor = percentage > 0 ? "bg-gray-800" : "bg-black";
+  const buttonRef = useRef();
+  const bgColor = percentage > 0 ? "bg-white" : "bg-black";
 
   const timeMap = {
     [0]: "◴",
@@ -22,15 +23,23 @@ const ProgressButton = props => {
 
   return (
     <button
-      onClick={onClick}
+      ref={buttonRef}
+      onClick={() => {
+        buttonRef.current.blur();
+        onClick();
+      }}
       className={`block text-gray-200 rounded-sm text-sm uppercase tracking-wider font-semibold mb-4 relative min-w-full h-12 overflow-hidden ${bgColor}`}
     >
       <span className="relative text-white z-40">
-        {percentage === 0 ? props.text : timeChar}
+        {percentage === 0 ? (
+          props.text
+        ) : (
+          <span className="text-black">{timeChar}</span>
+        )}
       </span>
       <span
-        style={{ left: `${100 - percentage}%` }}
-        className="bg-gray-600 z-10 w-full h-full absolute top-0 bottom-0 right-0"
+        style={{ width: `${percentage}%` }}
+        className="bg-black z-10 h-px absolute top-0 left-0"
       ></span>
     </button>
   );
@@ -56,12 +65,14 @@ export function ConnectAction(props) {
     progress: 0
   });
 
+  const intervals = (CoolDowns.ByteShards * 10) / 2;
+
   useEffect(() => {
     if (!connectStatus.initialized) {
       return;
     }
 
-    const intervalId = setInterval(() => {
+    const timeOutId = setTimeout(() => {
       const nextProgress = connectStatus.progress + 1;
 
       setConnectStatus({
@@ -76,9 +87,9 @@ export function ConnectAction(props) {
         setLogQueue(createLog(logQueue, log));
         setByteShards(byteShards + 1 + bonus);
       }
-    }, (CoolDowns.ByteShards * 10) / 2);
+    }, intervals);
 
-    return () => clearInterval(intervalId);
+    return () => clearTimeout(timeOutId);
   }, [connectStatus]);
 
   function gatherByteShard() {
