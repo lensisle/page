@@ -10,7 +10,7 @@ export function ConnectionGiftScreen(props) {
     return null;
   }
 
-  if (byteShards > 8) {
+  if (byteShards > 6) {
     setStep(StepNames.UnsuccessfulConnection);
     return null;
   }

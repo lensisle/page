@@ -31,7 +31,7 @@ export const AchievementsList = [
 ];
 
 export const CoolDowns = {
-  ByteShards: 3
+  ByteShards: 12
 };
 
 export const ResourcesData = {

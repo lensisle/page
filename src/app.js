@@ -4,7 +4,7 @@ import "./styles/index.css";
 import { AppProvider } from "./context";
 import { Trophies } from "./global/Trophies";
 import { Resources } from "./global/Resources";
-import { Actions } from "./global/Actions";
+import { Actions, ConnectAction } from "./global/Actions";
 import { IntroScreen } from "./screens/IntroScreen";
 import { FastEndScreen } from "./screens/FastEndScreen";
 import { ConnectionGiftScreen } from "./screens/ConnectionGiftScreen";
@@ -35,7 +35,9 @@ export default function App() {
             </div>
           </div>
           <div className="bg-gray-200 h-screen">
-            <Actions />
+            <Actions>
+              <ConnectAction />
+            </Actions>
           </div>
           <Achievements />
         </AppProvider>
