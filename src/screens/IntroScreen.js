@@ -35,26 +35,38 @@ export function IntroScreen(props) {
     <p>
       Hello <span className="font-semibold">visitor</span>, this is my{" "}
       <span className="font-semibold">old self</span> writing.
-      <br /> If <span className="font-semibold">past</span> is immutable then an
-      immutable version of <span className="font-hairline">me</span> is stored
-      on this app.
+      <br />
+      <br /> You are about to enter{" "}
+      <span className="font-semibold">The void</span>, a weird parallel reality
+      that exist on the internet (on this domain precisely).
       <br />
       <br />
-      Do you want to know more about this?{" "}
+      Once you enter the void an immutable copy of your persona will be stored
+      here and will be updated everytime an important event happens (helpful If
+      you want to continue later).
+      <br />
+      <br />
+      I don't really know how to escape (that's why I'm still here) and I won't
+      be able to help you if get in trouble, please take a moment to decide what
+      you want to do.
+      <br />
+      <br />
+      You can explore the void now or just go to my social network links and
+      skip everything.
+      <br />
+      <br />
       <button
-        className="mr-1 inline-block hover:bg-gray-900 hover:text-gray-200"
+        className="block mr-1 inline-block hover:bg-gray-900 hover:text-gray-200"
         onClick={goToNext}
       >
-        yes
+        Explore
       </button>
-      or{" "}
       <button
-        className="hover:bg-gray-900 hover:text-gray-200"
+        className="block hover:bg-gray-900 hover:text-gray-200"
         onClick={goToEnd}
       >
-        no
+        Leave
       </button>
-      .
     </p>
   );
 }

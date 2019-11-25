@@ -12,10 +12,7 @@ export function FastEndScreen(props) {
 
   return (
     <div>
-      <p className="mb-5">
-        That's fine. You can visit{" "}
-        <span className="font-bold italic">the void</span> any other time.
-      </p>
+      <p className="mb-5">Goodbye.</p>
       <p className="mb-2 underline">More about me</p>
       <ul>
         <li>

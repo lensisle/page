@@ -5,7 +5,7 @@ import { StepNames } from "../data";
 export function GameMenu(props) {
   const { step } = useContext(AppContext);
 
-  if (step <= StepNames.ConnectionGift) {
+  if (step < StepNames.UnsuccessfulConnection) {
     return null;
   }
 

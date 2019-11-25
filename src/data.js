@@ -17,8 +17,9 @@ export const T2 = {
 
 export const StepNames = {
   Introduction: 0,
-  ConnectionGift: 1,
-  UnsuccessfulConnection: 2,
+  ConnectionGateGift: 1,
+  ConnectionGateAccepted: 2,
+  UnsuccessfulConnection: 3,
   FastEnd: -1
 };
 
