@@ -41,3 +41,17 @@ export const ResourcesData = {
     name: "Byte Shards"
   }
 };
+
+export const ViewDirection = {
+  North: "North",
+  West: "West",
+  South: "South",
+  East: "East"
+};
+
+export const PlayerStat = {
+  Attack: "Attack",
+  Spirit: "Spirit",
+  Intelligence: "Intelligence",
+  Determination: "Determination"
+};

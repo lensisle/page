@@ -6,7 +6,7 @@ import { StepNames } from "../data";
 export function ConnectionGiftScreen(props) {
   const { step, byteShards, setStep } = useContext(AppContext);
 
-  if (step !== StepNames.ConnectionGift) {
+  if (step !== StepNames.ConnectionGateGift) {
     return null;
   }
 

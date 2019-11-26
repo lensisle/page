@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { StepNames } from "./data";
+import { StepNames, PlayerStat } from "./data";
 
 export const AppContext = React.createContext();
 
 const defaultStats = {
-  attack: 0,
-  resilience: 0,
-  inteligence: 0,
-  determination: 0
+  [PlayerStat.Attack]: 0,
+  [PlayerStat.Spirit]: 0,
+  [PlayerStat.Intelligence]: 0,
+  [PlayerStat.Determination]: 0
 };
 
 export function AppProvider(props) {
