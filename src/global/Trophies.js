@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { AppContext } from "../context";
+import { StepNames } from "../data";
 
 const Trophy = ({ img, description }) => (
   <div>
@@ -13,9 +14,9 @@ const Trophy = ({ img, description }) => (
 );
 
 export function Trophies() {
-  const { trophies = [] } = useContext(AppContext);
+  const { trophies = [], step } = useContext(AppContext);
 
-  if (trophies.length < 1) {
+  if (trophies.length < 1 || step <= StepNames.TheVoidEntrance) {
     return null;
   }
 

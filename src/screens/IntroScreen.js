@@ -1,28 +1,22 @@
 import React, { useContext } from "react";
-import { StepNames, T1, AchievementsList } from "../data";
+import { StepNames, T1 } from "../data";
 import { AppContext } from "../context";
 import { createLog } from "../utils/logUtils";
 
 export function IntroScreen(props) {
-  const {
-    step,
-    setTrophies,
-    setStep,
-    logQueue,
-    setLogQueue,
-    setUnlockedAchievements
-  } = useContext(AppContext);
+  const { step, setTrophies, setStep, logQueue, setLogQueue } = useContext(
+    AppContext
+  );
 
   if (step !== StepNames.Introduction) {
     return null;
   }
 
   function goToNext() {
-    setUnlockedAchievements("First Artifact");
     setTrophies([T1]);
-    const log = createLog(logQueue, "You accepted a gift.");
+    const log = createLog(logQueue, "You entered the void.");
     setLogQueue(log);
-    setStep(StepNames.ConnectionGift);
+    setStep(StepNames.TheVoidEntrance);
   }
 
   function goToEnd() {

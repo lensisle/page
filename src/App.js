@@ -13,6 +13,7 @@ import { Log } from "./global/Log";
 import { GameMenu } from "./global/GameMenu";
 import { UnsuccessfulConnectionScreen } from "./screens/UnsuccessfulConnectionScreen";
 import { Separator } from "./global/Separator";
+import { TheVoidEntranceScreen } from "./screens/TheVoidEntranceScreen";
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
               <ConnectionGiftScreen />
               <FastEndScreen />
               <UnsuccessfulConnectionScreen />
+              <TheVoidEntranceScreen />
             </div>
             <Separator />
             <Resources />

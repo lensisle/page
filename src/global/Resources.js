@@ -13,11 +13,7 @@ export function Resources(props) {
     }
   ];
 
-  if (
-    step === StepNames.Introduction ||
-    step === StepNames.FastEnd ||
-    resources.length < 1
-  ) {
+  if (step <= StepNames.TheVoidEntrance || resources.length < 1) {
     return null;
   }
 

@@ -48,7 +48,7 @@ const ProgressButton = props => {
 export function Actions(props) {
   const { step } = useContext(AppContext);
 
-  if (step === StepNames.Introduction || step === StepNames.FastEnd) {
+  if (step <= StepNames.TheVoidEntrance) {
     return null;
   }
 
