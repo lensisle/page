@@ -43,8 +43,8 @@ export const ResourcesData = {
 };
 
 export const ViewDirection = {
-  North: "North",
   West: "West",
+  North: "North",
   South: "South",
   East: "East"
 };

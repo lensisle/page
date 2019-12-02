@@ -36,15 +36,14 @@ export function IntroScreen(props) {
       <br />
       <br />
       Once you enter the void an immutable copy of your persona will be stored
-      and trapped here.
+      and trapped there.
       <br />
       <br />
-      I don't really know how to escape and I won't be able to help you if get
+      I don't really know how to escape and I won't be able to help if you get
       in trouble, please take a moment to decide what you want to do.
       <br />
       <br />
-      You can explore the void now or just go to my social network links and
-      skip everything.
+      You can explore the void now or just leave.
       <br />
       <br />
       <button
