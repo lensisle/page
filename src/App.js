@@ -3,8 +3,9 @@ import "./styles/index.css";
 
 import { AppProvider } from "./context";
 import { Trophies } from "./global/Trophies";
+import { Stats } from "./global/Stats";
 import { Resources } from "./global/Resources";
-import { Actions, ConnectAction } from "./global/Actions";
+import { Actions, GatherSouls } from "./global/Actions";
 import { IntroScreen } from "./screens/IntroScreen";
 import { FastEndScreen } from "./screens/FastEndScreen";
 import { ConnectionGiftScreen } from "./screens/ConnectionGiftScreen";
@@ -31,6 +32,7 @@ export default function App() {
             </div>
             <Separator />
             <Resources />
+            <Stats />
             <div className="w-full mt-10 flex">
               <Log />
               <GameMenu />
@@ -38,7 +40,7 @@ export default function App() {
           </div>
           <div className="h-screen">
             <Actions>
-              <ConnectAction />
+              <GatherSouls />
             </Actions>
           </div>
           <Achievements />

@@ -11,7 +11,7 @@ export function Log(props) {
   }
 
   const logList = (
-    <ul className="max-h-full overflow-hidden">
+    <ul className="max-h-full overflow-y-scroll">
       {logQueue.map((log, idx) => {
         if (idx === 0) {
           return (

@@ -37,8 +37,8 @@ export const CoolDowns = {
 };
 
 export const ResourcesData = {
-  ByteShards: {
-    name: "Byte Shards"
+  AbandonedSouls: {
+    name: "Abandoned Souls"
   }
 };
 

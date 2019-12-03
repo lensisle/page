@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState, useRef } from "react";
 import { AppContext } from "../context";
 import { StepNames, CoolDowns } from "../data";
 import { createLog } from "../utils/logUtils";
-import { BYTE_SHARDS_NORMAL, BYTE_SHARDS_HIGH } from "./Strings";
+import { ABANDONED_SOULS_NORMAL, ABANDONED_SOULS_HIGH } from "./Strings";
 
 const ProgressButton = props => {
   const { percentage = 0, onClick } = props;
@@ -55,12 +55,15 @@ export function Actions(props) {
   return <div className=" max-w-lg flex flex-col w-40">{props.children}</div>;
 }
 
-export function ConnectAction(props) {
-  const { byteShards, setByteShards, logQueue, setLogQueue } = useContext(
-    AppContext
-  );
+export function GatherSouls(props) {
+  const {
+    abandonedSouls,
+    setAbandonedSouls,
+    logQueue,
+    setLogQueue
+  } = useContext(AppContext);
 
-  const [connectStatus, setConnectStatus] = useState({
+  const [collectionStatus, setCollectionStatus] = useState({
     initialized: false,
     progress: 0
   });
@@ -68,36 +71,36 @@ export function ConnectAction(props) {
   const intervals = (CoolDowns.ByteShards * 10) / 2;
 
   useEffect(() => {
-    if (!connectStatus.initialized) {
+    if (!collectionStatus.initialized) {
       return;
     }
 
     const timeOutId = setTimeout(() => {
-      const nextProgress = connectStatus.progress + 1;
+      const nextProgress = collectionStatus.progress + 1;
 
-      setConnectStatus({
+      setCollectionStatus({
         initialized: nextProgress <= 100,
         progress: nextProgress <= 100 ? nextProgress : 0
       });
 
-      if (connectStatus.progress >= 100) {
+      if (collectionStatus.progress >= 100) {
         const bonus = Math.ceil(Math.random() * 100) >= 95 ? 2 : 0;
-        const log = bonus > 0 ? BYTE_SHARDS_HIGH : BYTE_SHARDS_NORMAL;
+        const log = bonus > 0 ? ABANDONED_SOULS_HIGH : ABANDONED_SOULS_NORMAL;
 
         setLogQueue(createLog(logQueue, log));
-        setByteShards(byteShards + 1 + bonus);
+        setAbandonedSouls(abandonedSouls + 1 + bonus);
       }
     }, intervals);
 
     return () => clearTimeout(timeOutId);
-  }, [connectStatus]);
+  }, [collectionStatus]);
 
-  function gatherByteShard() {
-    if (connectStatus.initialized) {
+  function gatherSouls() {
+    if (collectionStatus.initialized) {
       return;
     }
 
-    setConnectStatus({
+    setCollectionStatus({
       initialized: true,
       progress: 0
     });
@@ -105,9 +108,9 @@ export function ConnectAction(props) {
 
   return (
     <ProgressButton
-      text="Connect"
-      onClick={gatherByteShard}
-      percentage={connectStatus.progress}
+      text="Gather Souls"
+      onClick={gatherSouls}
+      percentage={collectionStatus.progress}
     />
   );
 }

@@ -4,12 +4,12 @@ import { StepNames, ResourcesData } from "../data";
 import { AppContext } from "../context";
 
 export function Resources(props) {
-  const { step, byteShards } = useContext(AppContext);
+  const { step, abandonedSouls } = useContext(AppContext);
 
   const resources = [
     {
-      name: ResourcesData.ByteShards.name,
-      quantity: byteShards
+      name: ResourcesData.AbandonedSouls.name,
+      quantity: abandonedSouls
     }
   ];
 
@@ -20,14 +20,14 @@ export function Resources(props) {
   return (
     <div>
       <p>Resources</p>
-      {resources.map(resource => (
-        <ul key={resource.name}>
-          <li>
+      <ul>
+        {resources.map(resource => (
+          <li key={resource.name}>
             <span className="italic">{resource.name}</span>{" "}
             <span className="text-md font-semibold">{resource.quantity}</span>
           </li>
-        </ul>
-      ))}
+        ))}
+      </ul>
     </div>
   );
 }

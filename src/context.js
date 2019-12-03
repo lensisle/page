@@ -14,7 +14,7 @@ export function AppProvider(props) {
   const [step, setStep] = useState(StepNames.Introduction);
   const [trophies, setTrophies] = useState();
   const [logQueue, setLogQueue] = useState([]);
-  const [byteShards, setByteShards] = useState(0);
+  const [abandonedSouls, setAbandonedSouls] = useState(0);
   const [unlockedAchievements, setUnlockedAchievements] = useState([]);
   const [stats, setStats] = useState(defaultStats);
 
@@ -25,8 +25,8 @@ export function AppProvider(props) {
     setTrophies,
     logQueue,
     setLogQueue,
-    byteShards,
-    setByteShards,
+    abandonedSouls,
+    setAbandonedSouls,
     unlockedAchievements,
     setUnlockedAchievements,
     stats,
