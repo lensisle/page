@@ -1,14 +1,10 @@
 import React, { useContext } from "react";
 import { AppContext } from "../context";
 
-import { StepNames } from "../data";
+import { StepName } from "../data";
 
-export function UnsuccessfulConnectionScreen(props) {
+export function UnsuccessfulConnectionScreen() {
   const { step } = useContext(AppContext);
-
-  if (step !== StepNames.UnsuccessfulConnection) {
-    return null;
-  }
 
   return (
     <div>

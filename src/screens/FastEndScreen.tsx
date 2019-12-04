@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import { AppContext } from "../context";
 
-import { StepNames } from "../data";
+import { StepName } from "../data";
 
-export function FastEndScreen(props) {
+export function FastEndScreen() {
   const { step } = useContext(AppContext);
 
-  if (step !== StepNames.FastEnd) {
+  if (step !== StepName.FastEnd) {
     return null;
   }
 

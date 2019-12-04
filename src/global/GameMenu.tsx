@@ -1,14 +1,9 @@
 import React, { useContext } from "react";
 import { AppContext } from "../context";
-import { StepNames } from "../data";
+import { StepName } from "../data";
+import { tryPreventRender } from "../utils";
 
-export function GameMenu(props) {
-  const { step } = useContext(AppContext);
-
-  if (step < StepNames.UnsuccessfulConnection) {
-    return null;
-  }
-
+export function GameMenu() {
   return (
     <div className="w-2/3">
       <ul className="flex">

@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 
-import { StepNames } from "../data";
+import { StepName } from "../data";
 import { AppContext } from "../context";
 
-export function Log(props) {
+export function Log() {
   const { step, logQueue = [], setLogQueue } = useContext(AppContext);
 
-  if (step === StepNames.Introduction) {
+  if (step === StepName.Introduction) {
     return null;
   }
 

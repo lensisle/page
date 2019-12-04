@@ -1,28 +1,25 @@
 import React, { useContext } from "react";
-import { StepNames, T1 } from "../data";
+import { StepName } from "../data";
 import { AppContext } from "../context";
-import { createLog } from "../utils/logUtils";
+import { createLog } from "../utils";
 
-export function IntroScreen(props) {
-  const { step, setTrophies, setStep, logQueue, setLogQueue } = useContext(
-    AppContext
-  );
+export function IntroScreen() {
+  const { step, setStep, logQueue, setLogQueue } = useContext(AppContext);
 
-  if (step !== StepNames.Introduction) {
+  if (step !== StepName.Introduction) {
     return null;
   }
 
   function goToNext() {
-    setTrophies([T1]);
     const log = createLog(logQueue, "You entered the void.");
     setLogQueue(log);
-    setStep(StepNames.TheVoidEntrance);
+    setStep(StepName.TheVoidEntrance);
   }
 
   function goToEnd() {
     const logQueue = createLog([], "You left the void.");
     setLogQueue(logQueue);
-    setStep(StepNames.FastEnd);
+    setStep(StepName.FastEnd);
   }
 
   return (

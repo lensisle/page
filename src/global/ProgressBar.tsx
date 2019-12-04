@@ -1,6 +1,11 @@
 import React from "react";
 
-export const ProgressBar = props => {
+interface ProgressBarProps {
+  children: any;
+  percentage: number;
+}
+
+export const ProgressBar = (props: ProgressBarProps) => {
   const { percentage, children } = props;
 
   return percentage > 0 ? (

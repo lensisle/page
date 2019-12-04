@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
 import { AppContext } from "../context";
-import { StepNames } from "../data";
+import { StepName } from "../data";
+import { tryPreventRender } from "../utils";
 
-export function Separator(props) {
+export function Separator() {
   const { step } = useContext(AppContext);
 
-  if (step === StepNames.Introduction) {
+  if (tryPreventRender(step, [StepName.Introduction])) {
     return null;
   }
 

@@ -1,14 +1,10 @@
 import React, { useContext } from "react";
 
-import { StepNames } from "../data";
+import { StepName } from "../data";
 import { AppContext } from "../context";
 
-export function Stats(props) {
+export function Stats() {
   const { step, stats } = useContext(AppContext);
-
-  if (step <= StepNames.TheVoidEntrance) {
-    return null;
-  }
 
   const statsArray = Object.keys(stats);
 

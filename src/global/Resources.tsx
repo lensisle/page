@@ -1,21 +1,17 @@
 import React, { useContext } from "react";
 
-import { StepNames, ResourcesData } from "../data";
+import { StepName, ResourcesData } from "../data";
 import { AppContext } from "../context";
 
-export function Resources(props) {
+export function Resources() {
   const { step, abandonedSouls } = useContext(AppContext);
 
   const resources = [
     {
-      name: ResourcesData.AbandonedSouls.name,
+      name: ResourcesData.AbandonedSouls,
       quantity: abandonedSouls
     }
   ];
-
-  if (step <= StepNames.TheVoidEntrance || resources.length < 1) {
-    return null;
-  }
 
   return (
     <div>

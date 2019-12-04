@@ -1,17 +1,23 @@
 import React, { useContext, useEffect, useState, useRef } from "react";
 
 import { AppContext } from "../context";
-import { StepNames, CoolDowns } from "../data";
-import { createLog } from "../utils/logUtils";
-import { ABANDONED_SOULS_NORMAL, ABANDONED_SOULS_HIGH } from "./Strings";
+import { StepName, CoolDowns } from "../data";
+import { createLog, tryPreventRender } from "../utils";
+import { ABANDONED_SOULS_NORMAL, ABANDONED_SOULS_HIGH } from "../strings";
 
-const ProgressButton = props => {
+interface ProgressButtonProps {
+  percentage: number;
+  onClick: any;
+  text: string;
+}
+
+const ProgressButton = (props: ProgressButtonProps) => {
   const { percentage = 0, onClick } = props;
 
-  const buttonRef = useRef();
+  const buttonRef = useRef<HTMLButtonElement>(null);
   const bgColor = percentage > 0 ? "bg-white" : "bg-black";
 
-  const timeMap = {
+  const timeMap: { [index: number]: string } = {
     [0]: "◴",
     [1]: "◷",
     [2]: "◶",
@@ -19,13 +25,15 @@ const ProgressButton = props => {
     [4]: "◴"
   };
 
-  const timeChar = timeMap[Math.floor(percentage / 25)];
+  const timeChar: string = timeMap[Math.floor(percentage / 25)];
 
   return (
     <button
       ref={buttonRef}
       onClick={() => {
-        buttonRef.current.blur();
+        if (buttonRef != null && buttonRef.current != null) {
+          buttonRef.current.blur();
+        }
         onClick();
       }}
       className={`block text-gray-200 rounded-sm text-sm uppercase tracking-wider font-semibold mb-4 relative min-w-full h-12 overflow-hidden ${bgColor}`}
@@ -45,17 +53,7 @@ const ProgressButton = props => {
   );
 };
 
-export function Actions(props) {
-  const { step } = useContext(AppContext);
-
-  if (step <= StepNames.TheVoidEntrance) {
-    return null;
-  }
-
-  return <div className=" max-w-lg flex flex-col w-40">{props.children}</div>;
-}
-
-export function GatherSouls(props) {
+export function GatherSouls() {
   const {
     abandonedSouls,
     setAbandonedSouls,
@@ -68,7 +66,7 @@ export function GatherSouls(props) {
     progress: 0
   });
 
-  const intervals = (CoolDowns.ByteShards * 10) / 2;
+  const intervals = (CoolDowns.AbandonedSouls * 10) / 2;
 
   useEffect(() => {
     if (!collectionStatus.initialized) {
@@ -113,4 +111,12 @@ export function GatherSouls(props) {
       percentage={collectionStatus.progress}
     />
   );
+}
+
+interface ActionsProps {
+  children: any;
+}
+
+export function Actions(props: ActionsProps) {
+  return <div className=" max-w-lg flex flex-col w-40">{props.children}</div>;
 }

@@ -1,12 +1,15 @@
 import React, { useContext } from "react";
-import { AppContext } from "../context";
+import { AppContext, ContextInterface } from "../context";
 
-import { StepNames, AchievementsList } from "../data";
+import { StepName, AchievementsList } from "../data";
+import { tryPreventRender } from "../utils";
 
-export function Achievements(props) {
-  const { step, unlockedAchievements } = useContext(AppContext);
+export function Achievements() {
+  const { step, unlockedAchievements } = useContext<ContextInterface>(
+    AppContext
+  );
 
-  if (step === StepNames.Introduction) {
+  if (tryPreventRender(step, [StepName.Introduction])) {
     return null;
   }
 

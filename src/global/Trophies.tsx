@@ -1,24 +1,25 @@
 import React, { useContext } from "react";
 import { AppContext } from "../context";
-import { StepNames } from "../data";
 
-const Trophy = ({ img, description }) => (
+const Trophy = (props: { img: string; description: string }) => (
   <div>
     <img
       className="h-8 mr-6"
-      src={img}
-      alt={description}
-      aria-label={description}
+      src={props.img}
+      alt={props.description}
+      aria-label={props.description}
     />
   </div>
 );
 
 export function Trophies() {
-  const { trophies = [], step } = useContext(AppContext);
+  const { trophies } = useContext(AppContext);
 
-  if (trophies.length < 1 || step <= StepNames.TheVoidEntrance) {
+  if (trophies.length < 1) {
     return null;
   }
+
+  console.log("trophies", trophies);
 
   return (
     <div className="flex mb-0 mb-10">

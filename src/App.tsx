@@ -8,7 +8,7 @@ import { Resources } from "./global/Resources";
 import { Actions, GatherSouls } from "./global/Actions";
 import { IntroScreen } from "./screens/IntroScreen";
 import { FastEndScreen } from "./screens/FastEndScreen";
-import { ConnectionGiftScreen } from "./screens/ConnectionGiftScreen";
+import { InsideTheVoidScreen } from "./screens/InsideTheVoidScreen";
 import { Achievements } from "./global/Achievements";
 import { Log } from "./global/Log";
 import { GameMenu } from "./global/GameMenu";
@@ -16,7 +16,7 @@ import { UnsuccessfulConnectionScreen } from "./screens/UnsuccessfulConnectionSc
 import { Separator } from "./global/Separator";
 import { TheVoidEntranceScreen } from "./screens/TheVoidEntranceScreen";
 
-export default function App() {
+export default function App(): JSX.Element {
   return (
     <div className="overflow-hidden max-w-full max-h-screen overflow-hidden">
       <div className="ml-10 mt-10 flex">
@@ -25,10 +25,9 @@ export default function App() {
             <Trophies />
             <div className="min-w-full">
               <IntroScreen />
-              <ConnectionGiftScreen />
-              <FastEndScreen />
-              <UnsuccessfulConnectionScreen />
+              <InsideTheVoidScreen />
               <TheVoidEntranceScreen />
+              <FastEndScreen />
             </div>
             <Separator />
             <Resources />
