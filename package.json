@@ -58,5 +58,8 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "resolutions": {
+    "**/**/serialize-javascript": "^2.1.1"
   }
 }
