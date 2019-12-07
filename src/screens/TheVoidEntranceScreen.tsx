@@ -165,9 +165,6 @@ export function TheVoidEntranceScreen() {
     nextDirection: null
   });
 
-  const visitTime = 500; // half second total
-  const interval = visitTime / 100;
-
   useEffect(() => {
     if (percentage === 0) {
       return;
@@ -180,9 +177,9 @@ export function TheVoidEntranceScreen() {
       } else {
         setPercentage(percentage + 1);
       }
-    }, interval);
+    }, 10);
     return () => clearTimeout(timeOutId);
-  }, [percentage]);
+  });
 
   if (step !== StepName.TheVoidEntrance) {
     return null;

@@ -91,7 +91,7 @@ export function GatherSouls() {
     }, intervals);
 
     return () => clearTimeout(timeOutId);
-  }, [collectionStatus]);
+  });
 
   function gatherSouls() {
     if (collectionStatus.initialized) {

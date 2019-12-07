@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 
-import { StepName } from "../data";
+import { StepName, PlayerStat } from "../data";
 import { AppContext } from "../context";
 
-export function Stats() {
+export function StatsPanel() {
   const { step, stats } = useContext(AppContext);
 
   const statsArray = Object.keys(stats);

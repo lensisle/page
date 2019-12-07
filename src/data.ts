@@ -13,7 +13,7 @@ export interface Trophy {
   description: string;
 }
 
-export interface Stat {
+export interface Stats {
   [stat: string]: number;
 }
 
@@ -60,8 +60,8 @@ export enum ViewDirection {
 }
 
 export enum PlayerStat {
-  Attack,
-  Spirit,
-  Intelligence,
-  Determination
+  Attack = "Attack",
+  Spirit = "Spirit",
+  Intelligence = "Intelligence",
+  Determination = "Determination"
 }

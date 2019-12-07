@@ -3,7 +3,7 @@ import "./styles/index.css";
 
 import { AppProvider } from "./context";
 import { Trophies } from "./global/Trophies";
-import { Stats } from "./global/Stats";
+import { StatsPanel } from "./global/Stats";
 import { Resources } from "./global/Resources";
 import { Actions, GatherSouls } from "./global/Actions";
 import { IntroScreen } from "./screens/IntroScreen";
@@ -31,7 +31,7 @@ export default function App(): JSX.Element {
             </div>
             <Separator />
             <Resources />
-            <Stats />
+            <StatsPanel />
             <div className="w-full mt-10 flex">
               <Log />
               <GameMenu />

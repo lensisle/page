@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StepName, PlayerStat, Trophy, Log, Stat } from "./data";
+import { StepName, PlayerStat, Trophy, Log, Stats } from "./data";
 
 export interface ContextInterface {
   step: StepName;
@@ -12,15 +12,15 @@ export interface ContextInterface {
   setAbandonedSouls: React.Dispatch<React.SetStateAction<number>>;
   unlockedAchievements: Array<string>;
   setUnlockedAchievements: React.Dispatch<React.SetStateAction<Array<string>>>;
-  stats: Stat;
-  setStats: React.Dispatch<React.SetStateAction<Stat>>;
+  stats: Stats;
+  setStats: React.Dispatch<React.SetStateAction<Stats>>;
 }
 
 export const AppContext = React.createContext<ContextInterface>(
   {} as ContextInterface
 );
 
-const defaultStats: Stat = {
+const defaultStats: Stats = {
   [PlayerStat.Attack]: 0,
   [PlayerStat.Spirit]: 0,
   [PlayerStat.Intelligence]: 0,
@@ -35,7 +35,7 @@ export function AppProvider(props: any) {
   const [unlockedAchievements, setUnlockedAchievements] = useState<
     Array<string>
   >([]);
-  const [stats, setStats] = useState<Stat>(defaultStats);
+  const [stats, setStats] = useState<Stats>(defaultStats);
 
   const value: ContextInterface = {
     step,
