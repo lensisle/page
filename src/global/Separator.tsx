@@ -3,7 +3,7 @@ import { AppContext } from "../context";
 import { StepName } from "../data";
 import { tryPreventRender } from "../utils";
 
-export function Separator() {
+export default function Separator() {
   const { step } = useContext(AppContext);
 
   if (tryPreventRender(step, [StepName.Introduction])) {

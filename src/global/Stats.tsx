@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { StepName, PlayerStat } from "../data";
 import { AppContext } from "../context";
 
-export function StatsPanel() {
+export default function StatsPanel() {
   const { step, stats } = useContext(AppContext);
 
   const statsArray = Object.keys(stats);

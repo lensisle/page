@@ -3,7 +3,7 @@ import { AppContext } from "../context";
 import { StepName } from "../data";
 import { tryPreventRender } from "../utils";
 
-export function GameMenu() {
+export default function GameMenu() {
   return (
     <div className="w-2/3">
       <ul className="flex">

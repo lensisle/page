@@ -148,7 +148,7 @@ function ScreenBody(props: ScreenBodyProps) {
   );
 }
 
-export function TheVoidEntranceScreen() {
+export default function TheVoidEntranceScreen() {
   const { step, setStep, stats, setStats, logQueue, setLogQueue } = useContext(
     AppContext
   );

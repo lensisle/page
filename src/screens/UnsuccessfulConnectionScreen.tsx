@@ -3,7 +3,7 @@ import { AppContext } from "../context";
 
 import { StepName } from "../data";
 
-export function UnsuccessfulConnectionScreen() {
+export default function UnsuccessfulConnectionScreen() {
   const { step } = useContext(AppContext);
 
   return (

@@ -3,7 +3,7 @@ import { AppContext } from "../context";
 
 import { StepName } from "../data";
 
-export function FastEndScreen() {
+export default function FastEndScreen() {
   const { step } = useContext(AppContext);
 
   if (step !== StepName.FastEnd) {

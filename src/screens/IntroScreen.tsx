@@ -3,7 +3,7 @@ import { StepName } from "../data";
 import { AppContext } from "../context";
 import { createLog } from "../utils";
 
-export function IntroScreen() {
+export default function IntroScreen() {
   const { step, setStep, logQueue, setLogQueue } = useContext(AppContext);
 
   if (step !== StepName.Introduction) {

@@ -27,7 +27,7 @@ const defaultStats: Stats = {
   [PlayerStat.Determination]: 0
 };
 
-export function AppProvider(props: any) {
+export default function AppProvider(props: any) {
   const [step, setStep] = useState<StepName>(StepName.Introduction);
   const [trophies, setTrophies] = useState<Array<Trophy>>([]);
   const [logQueue, setLogQueue] = useState<Array<Log>>([]);

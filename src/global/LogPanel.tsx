@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { StepName } from "../data";
 import { AppContext } from "../context";
 
-export function Log() {
+export default function LogPanel() {
   const { step, logQueue = [], setLogQueue } = useContext(AppContext);
 
   if (step === StepName.Introduction) {

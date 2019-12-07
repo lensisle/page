@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { StepName, ResourcesData } from "../data";
 import { AppContext } from "../context";
 
-export function Resources() {
+export default function Resources() {
   const { step, abandonedSouls } = useContext(AppContext);
 
   const resources = [

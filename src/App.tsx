@@ -1,20 +1,24 @@
 import React from "react";
 import "./styles/index.css";
 
-import { AppProvider } from "./context";
-import { Trophies } from "./global/Trophies";
-import { StatsPanel } from "./global/Stats";
-import { Resources } from "./global/Resources";
-import { Actions, GatherSouls } from "./global/Actions";
-import { IntroScreen } from "./screens/IntroScreen";
-import { FastEndScreen } from "./screens/FastEndScreen";
-import { InsideTheVoidScreen } from "./screens/InsideTheVoidScreen";
-import { Achievements } from "./global/Achievements";
-import { Log } from "./global/Log";
-import { GameMenu } from "./global/GameMenu";
-import { UnsuccessfulConnectionScreen } from "./screens/UnsuccessfulConnectionScreen";
-import { Separator } from "./global/Separator";
-import { TheVoidEntranceScreen } from "./screens/TheVoidEntranceScreen";
+// Screens
+import TheVoidEntranceScreen from "./screens/TheVoidEntranceScreen";
+import IntroScreen from "./screens/IntroScreen";
+import FastEndScreen from "./screens/FastEndScreen";
+import InsideTheVoidScreen from "./screens/InsideTheVoidScreen";
+import UnsuccessfulConnectionScreen from "./screens/UnsuccessfulConnectionScreen";
+
+// Global
+import Actions from "./global/Actions/Actions";
+import GatherSoulsAction from "./global/Actions/GatherSoulsAction";
+import Achievements from "./global/Achievements";
+import AppProvider from "./context";
+import Trophies from "./global/Trophies";
+import StatsPanel from "./global/Stats";
+import Resources from "./global/Resources";
+import LogPanel from "./global/LogPanel";
+import GameMenu from "./global/GameMenu";
+import Separator from "./global/Separator";
 
 export default function App(): JSX.Element {
   return (
@@ -33,13 +37,13 @@ export default function App(): JSX.Element {
             <Resources />
             <StatsPanel />
             <div className="w-full mt-10 flex">
-              <Log />
+              <LogPanel />
               <GameMenu />
             </div>
           </div>
           <div className="h-screen">
             <Actions>
-              <GatherSouls />
+              <GatherSoulsAction />
             </Actions>
           </div>
           <Achievements />

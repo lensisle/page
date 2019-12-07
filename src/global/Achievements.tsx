@@ -1,13 +1,11 @@
 import React, { useContext } from "react";
-import { AppContext, ContextInterface } from "../context";
+import { AppContext } from "../context";
 
 import { StepName, AchievementsList } from "../data";
 import { tryPreventRender } from "../utils";
 
-export function Achievements() {
-  const { step, unlockedAchievements } = useContext<ContextInterface>(
-    AppContext
-  );
+export default function Achievements() {
+  const { step, unlockedAchievements } = useContext(AppContext);
 
   if (tryPreventRender(step, [StepName.Introduction])) {
     return null;

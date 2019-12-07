@@ -12,7 +12,7 @@ const Trophy = (props: { img: string; description: string }) => (
   </div>
 );
 
-export function Trophies() {
+export default function Trophies() {
   const { trophies } = useContext(AppContext);
 
   if (trophies.length < 1) {

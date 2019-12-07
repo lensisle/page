@@ -3,7 +3,7 @@ import { AppContext } from "../context";
 
 import { StepName } from "../data";
 
-export function InsideTheVoidScreen() {
+export default function InsideTheVoidScreen() {
   const { step, setStep } = useContext(AppContext);
 
   if (step !== StepName.InsideTheVoidFirst) {
