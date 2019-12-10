@@ -1,3 +1,6 @@
+## Important
+This is a work in progress. If you run the project now it probably won't make sense.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
